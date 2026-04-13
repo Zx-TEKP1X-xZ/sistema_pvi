@@ -5,7 +5,7 @@ import java.io.IOException;
 
 public class TelaCadastro extends JFrame {
 
-    private JTextField campoTexto ;
+    private JTextField campoTexto;
     private JLabel Resultado;
 
     public TelaCadastro() {

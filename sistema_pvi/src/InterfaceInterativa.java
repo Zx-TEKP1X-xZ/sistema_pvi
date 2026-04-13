@@ -1,4 +1,5 @@
 import java.awt.FlowLayout;
+import java.awt.event.ActionEvent;
 import javax.swing.*;
 
 public class InterfaceInterativa extends JFrame {
@@ -6,10 +7,11 @@ public class InterfaceInterativa extends JFrame {
     private JTextField campoTexto ;
     private JButton botaoEnviar ;
     private JButton listarFuncionario;
+    private JButton cadastroProduto;
     private JLabel labelResultado ;
     public InterfaceInterativa () {
 // Configurações básicas do Frame
-        setTitle( "PAINEL" );
+        setTitle( "Controle de Convênio" );
         setExtendedState(JFrame.MAXIMIZED_BOTH);
         setDefaultCloseOperation(JFrame. EXIT_ON_CLOSE);
         setLocationRelativeTo( null);
@@ -21,6 +23,9 @@ public class InterfaceInterativa extends JFrame {
 
         listarFuncionario = new JButton("Listar Funcionário");
         add(listarFuncionario);
+
+        cadastroProduto = new JButton("Cadastrar Produto");
+        add(cadastroProduto);
 
 // 3. Criando o Label de Resultado
         labelResultado = new JLabel("");
@@ -34,6 +39,11 @@ public class InterfaceInterativa extends JFrame {
 
         listarFuncionario.addActionListener((e) -> {
             new TelaListagem("dados.csv").setVisible(true);
+            dispose();
+        });
+
+        cadastroProduto.addActionListener((e) -> {
+            new Produto().setVisible(true);
             dispose();
         });
     }
