@@ -7,7 +7,8 @@ public class InterfaceInterativa extends JFrame {
     private JTextField campoTexto ;
     private JButton botaoEnviar ;
     private JButton listarFuncionario;
-    private JButton cadastroProduto;
+    private JButton adicionarProduto;
+    private JButton listarProduto;
     private JLabel labelResultado ;
     public InterfaceInterativa () {
 // Configurações básicas do Frame
@@ -24,8 +25,11 @@ public class InterfaceInterativa extends JFrame {
         listarFuncionario = new JButton("Listar Funcionário");
         add(listarFuncionario);
 
-        cadastroProduto = new JButton("Cadastrar Produto");
-        add(cadastroProduto);
+        adicionarProduto = new JButton("Cadastrar Produto");
+        add(adicionarProduto);
+
+        listarProduto = new JButton("Listar Produto");
+        add(listarProduto);
 
 // 3. Criando o Label de Resultado
         labelResultado = new JLabel("");
@@ -42,8 +46,13 @@ public class InterfaceInterativa extends JFrame {
             dispose();
         });
 
-        cadastroProduto.addActionListener((e) -> {
-            new Produto().setVisible(true);
+        adicionarProduto.addActionListener((e) -> {
+            new AdicionarProduto().setVisible(true);
+            dispose();
+        });
+
+        listarProduto.addActionListener((e) -> {
+            new ListarProduto().setVisible(true);
             dispose();
         });
     }
